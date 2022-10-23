@@ -4,7 +4,7 @@ import { MongooseModule } from '@nestjs/mongoose'
 import { AppController } from './app.controller'
 import { AppService } from './app.service'
 import { User, UserSchema } from './user.schema'
-import { NotesModule } from './notes/notes.module'
+import { CardsModule } from './card/cards.module'
 
 @Module({
   imports: [
@@ -23,7 +23,7 @@ import { NotesModule } from './notes/notes.module'
       },
     }),
     MongooseModule.forFeature([{ name: User.name, schema: UserSchema }]),
-    NotesModule,
+    CardsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
